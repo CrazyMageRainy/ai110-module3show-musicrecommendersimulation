@@ -29,7 +29,57 @@ Some prompts to answer:
 
 You can include a simple diagram or bullet list if helpful.
 
+- The Features used for my recomendation system are: __genre, mood, energy, valence, and danceability__
+- Song will use the features above as its values to compare with other songs
+- UserProfile will store: user_preference scores for each feature (with numerical values). It will have a list of genres that the User has listened to (maybe with its frequency of which genre a listener listens to, and be sorted with the amount of songs that a user likes). 
+
+- Recommender will use weights to compute each feature based on their importance. $$total = (w1 * score_energy) + (w2 * score_valence) + (w3 * score_danceability) + ...$$
+- each one will be calculated using $score = 1 - abs(user_preference - song_value)$ which will base on how much it deiviates from the users prefered value for that feature
+- the songs that are recommended using the total score calculated. However for better recommendation it would be better to be able to modify the values of user prefrences based on what the user currently wants to listen to and not the overall choice of the user.
+
+How recommenders work is by using data collected from user listening history of the individual and scoring each songs based on each feature, we can give recommendations using a formula like the one above to give more fitting recommendations for the user. The weights provide fine tuning for us to focus more on whats more important for the listener. The app collects data on what songs one will dislike or like and attempts to use the values given to a song to determine the user_preference score for each feature and to limit any deviation from what the user would want to listen.
 ---
+Algorithm recipe: 
+- +26.0 points for genre match
+- +12.0 for mood match
+- +6.0 for valence
+- +5.0 for danceability
+- +9.0 for energy
+
+```mermaid
+flowchart TD
+    A[/"🎧 User Preferences
+    genre, mood, energy, valence, danceability"/]
+    
+    B[("📂 Load Songs
+    from CSV")]
+    
+    C{"For each song
+    in the list"}
+    
+    D["Genre match? → +2.6"]
+    E["Mood match? → +1.2"]
+    F["Energy closeness → ×0.9"]
+    G["Valence closeness → ×0.6"]
+    H["Danceability closeness → ×0.5"]
+    
+    I["Sum → Total Score"]
+    
+    J{More songs?}
+    
+    K["Sort all songs
+    by score descending"]
+    
+    L[/"🏆 Return Top K
+    Recommendations"/]
+
+    A --> B --> C
+    C --> D --> E --> F --> G --> H --> I
+    I --> J
+    J -- Yes --> C
+    J -- No --> K --> L
+```
+Genres is still the main bias out of all the features. However, the other features added together is more than it, allowing songs from other genres that might also be good recommendations.
 
 ## Getting Started
 

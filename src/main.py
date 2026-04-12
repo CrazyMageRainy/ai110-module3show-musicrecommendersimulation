@@ -17,7 +17,7 @@ def main() -> None:
 
     # Starter example profile
     user_prefs = {"genre": "pop", "mood": "happy", "energy": 0.8}
-
+    user_profile_1 = {"genre": "lofi", "mood": "chill", "energy": 0.45, "danceability": 0.3, "valence": 0.6}
     recommendations = recommend_songs(user_prefs, songs, k=5)
 
     print("\nTop recommendations:\n")
