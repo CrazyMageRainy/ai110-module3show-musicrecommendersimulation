@@ -49,10 +49,7 @@ class Recommender:
         return "Explanation placeholder"
 
 def load_songs(csv_path: str) -> List[Dict]:
-    """
-    Loads songs from a CSV file.
-    Required by src/main.py
-    """
+    """Load songs from a CSV file and return a list of song dictionaries. Required by src/main.py."""
     FLOAT_FIELDS = {"energy", "tempo_bpm", "valence", "danceability", "acousticness"}
     songs = []
     with open(csv_path, newline="") as f:
@@ -65,10 +62,7 @@ def load_songs(csv_path: str) -> List[Dict]:
     return songs
 
 def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
-    """
-    Scores a single song against user preferences.
-    Required by recommend_songs() and src/main.py
-    """
+    """Score a single song against user preferences and return the score with reasons. Required by recommend_songs() and src/main.py."""
     score = 0.0
     reasons = []
 
@@ -127,10 +121,7 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
     return (score, reasons)
 
 def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tuple[Dict, float, str]]:
-    """
-    Functional implementation of the recommendation logic.
-    Required by src/main.py
-    """
+    """Return the top-k scored songs for a user's preferences. Required by src/main.py."""
     scored = [
         (song, score, "; ".join(reasons))
         for song in songs

@@ -63,9 +63,9 @@ flowchart TD
     
     D["Genre match? → +26"]
     E["Mood match? → +12"]
-    F["Energy closeness → +9"]
-    G["Valence closeness → +6"]
-    H["Danceability closeness → +5"]
+    F["Energy closeness → x9"]
+    G["Valence closeness → x6"]
+    H["Danceability closeness → x5"]
     
     I["Sum → Total Score"]
     
@@ -84,6 +84,9 @@ flowchart TD
     J -- No --> K --> L
 ```
 Genres is still the main bias out of all the features. However, the other features added together is more than it, allowing songs from other genres that might also be good recommendations.
+
+![Algorithm Output Terminal Screenshot](algor-output-terminal-screenshoot.png)
+
 
 ## Getting Started
 
@@ -141,7 +144,7 @@ Examples:
 - It might over favor one genre or mood
 
 You will go deeper on this in your model card.
-
+This recommender is very static. It only created using the information of the given songs in songs.csv. If another song with a different genre comes in for example, it wasn't built with it in mind so something like the penalty for mood clash won't apply if the context reqires it to. It doesn;t include lyrics which will influence the nuancec and the context of the song. 'Moody' ssongs for example is very diverse in its subjects. It might mean a sad rainy afternoon at a coffee shop or a somber walk in a dark forest in an alternitive reality kind of music. The lyrics in a romance song can be a tragedy or a happy song. Also two moods might apply to a song. 
 ---
 
 ## Reflection
