@@ -19,6 +19,7 @@ Describe what your recommender is designed to do and who it is for.
 
 --- -->
 This model is still only for classroom exploration and not ready for real users. There is still some tweaking with weights like with genre, as well as going more indepth with moods clashing with user fav mood. Also, subgenres or similar genres can be done to give bonuses if they relate to the users fav genre. It mainly recommends based on genre, likely more useful to compare between songs of a genre instead of exploring different genres.
+
 ## 3. How the Model Works  
 
 <!-- Explain your scoring approach in simple language.  
@@ -155,5 +156,5 @@ Prompts:
 - What you learned about recommender systems  
 - Something unexpected or interesting you discovered  
 - How this changed the way you think about music recommendation apps   -->
-This is a pretty fun project. Weights really are important when trying to create something like this or models. The results change dramatically when I change it. There is definently a lot of features I could have added, especially a bonus/penalties which would help fine tune the recomendations. AI tools really helped a lot this time. I usually write down my thoughts in other files such in evaluation.md, cause I was trying to write down my thoughts in a large pile to figure out what to improve. I have to double check the code especially when it tries to make a big edit, to avoid any concerning logic errors. Luckily that didn't really happen> I stopped claude to clarify what I want to be implemented, and I usually find myself referencing my other files besides the required ones to try to steer the ai to a certain result.
+This is a pretty fun project. Weights really are important when trying to create something like this or models. The results change dramatically when I change it. There is definently a lot of features I could have added, especially a bonus/penalties which would help fine tune the recomendations. AI tools really helped a lot this time. I usually write down my thoughts in other files such in evaluation.md, cause I was trying to write down my thoughts in a large pile to figure out what to improve. I have to double check the code especially when it tries to make a big edit, to avoid any concerning logic errors. Luckily that didn't really happen. I stopped claude to clarify what I want to be implemented, and I usually find myself referencing my other files besides the required ones to try to steer the ai to a certain result.
 Even if it was a simple algorithem, tweaking it gave very interesting results, especially when I want to personalize what I want to listen too. I would like to add more features as well as more bonuses and penalties so I can make recommendations for my own personal use
