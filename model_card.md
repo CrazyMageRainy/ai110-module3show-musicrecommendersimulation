@@ -37,6 +37,7 @@ Categorical features: genre, mood, artist
 Numerical features: energy, valence, danceability
 <!-- Loaded but unused: tempo_bpm, acousticness -->
 Used a basic Fix weight Linear sum and a bonus/penalty modifier to try to control the recommendations more to the user preferences. The main changes would be ommiting tempo and acousticness, both being very niche in their usuage and won't affect the value as much.
+
 ---
 
 ## 4. Data  
